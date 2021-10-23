@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form > div {
+            margin: 10px;
+        }
+        td {
+            border: 1px solid gray;
+            min-height: 100px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div>
+            <label>Name</label>
+            <input type="text" id="name" />
+        </div>
+        <div>
+            <label>Quantity</label>
+            <input type="text" id="quantity" />
+        </div>
+        <div>
+            <label>Priority</label>
+            <select id="priority">
+                <option value="">Choose</option>
+                <option value="low">Low</option>
+                <option value="med">Medium</option>
+                <option value="high">High</option>
+            </select>
+        </div>
+        <div>
+            <input type="submit" value="Submit" />
+        </div>
+    </form>
+    <button>Delete All</button>
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Quantity</td>
+            <td>Priority</td>
+            <td>Complete</td>
+            <td>Delete</td>
+        </tr>
+    </table>
+    <script>
+        var fm = document.querySelector("form");
+        var tb = document.querySelector("table");
+        fm.addEventListener("submit", addItem);
+        var btn = document.querySelector("button");
+        btn.addEventListener("click", deleteAll);
+
+        function deleteAll() {
+            var items = tb.querySelectorAll("tr");
+            for(var i = 1; i < items.length; i++) {
+                items[i].remove();
+            }
+        }
+
+        function addItem(event) {
+            event.preventDefault();
+            var name = document.getElementById("name").value;
+            var quantity = document.getElementById("quantity").value;
+            var priority = document.getElementById("priority").value;
+            console.log(name, quantity, priority);
+            if (name.length > 0) {
+                createRow(name, quantity, priority);
+            }
+            document.getElementById("name").value = "";
+            document.getElementById("quantity").value = "";
+            document.getElementById("priority").value = "";
+        }
+
+        function createRow(name, quantity, priority) {
+            var row = document.createElement("tr");
+            var td1 = document.createElement('td');
+            td1.textContent = name;
+            var td2 = document.createElement('td');
+            td2.textContent = quantity
+            var td3 = document.createElement('td');
+            td3.textContent = priority;
+            if (priority == "high") {
+                td3.style.color = "red";
+            }
+            var td4 = document.createElement("td");
+            td4.textContent = "Mark";
+            td4.addEventListener("click", markComplete);
+
+            var td5 = document.createElement("td");
+            td5.textContent = "Delete";
+            td5.addEventListener("click", makeDelete);
+
+            row.append(td1, td2, td3, td4, td5);
+
+            tb.appendChild(row);
+        }
+
+        function markComplete(e) {
+            e.target.textContent = "Completed";
+            e.target.removeEventListener("click", markComplete);
+            e.target.parentNode.style.backgroundColor = "green";
+        }
+
+        function makeDelete(e) {
+            e.target.parentNode.remove();
+        }
+    </script>
+</body>
+</html>

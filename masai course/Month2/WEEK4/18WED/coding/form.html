@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+ <html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=divice-width,initial-scal=1.0'>
+<title>Document</title>
+<style>
+    #data{
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20%;
+        grid-gap: 5%;
+    }
+    img{
+        width: 40%;
+    }
+    #data div {
+        display:flex;
+        flex-direction: column;
+        align-items:center;
+    }
+</style>
+</head>
+<body>
+    <h1>Products Inventory</h1>
+    <div id="data"></div>
+    <script>
+        const detergents = [
+    {
+      name: "Nirma",
+      price: "10",
+      image: "https://n2.sdlcdn.com/imgs/b/3/0/Nirma-Detergent-Powder-Nirma-Washing-SDL602226993-1-15845.jpg",
+    },
+
+    {
+      name: "Surf excel",
+      price: "20",
+      image: "https://m.media-amazon.com/images/I/61rDJVoKpeL._SL1000_.jpg",
+    },
+    {
+      name: "Tide",
+      price: "30",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Tide_logo.svg/1200px-Tide_logo.svg.png",
+    },
+    {
+      name: "wheel",
+      price: "60",
+      image: "https://5.imimg.com/data5/QV/MX/MY-8609988/wheel-powder-500x500.jpg",
+    },
+    {
+      name: "ghadi",
+      price: "40",
+      image: "https://m.media-amazon.com/images/I/61SZYb3O-wL._SL1399_.jpg",
+    },
+    {
+      name: "ariel",
+      price: "50",
+      image: "https://5.imimg.com/data5/HE/VA/SO/SELLER-46615966/111-500x500.jpg",
+    },
+  ];
+
+  const detergents_json = JSON.stringify(detergents);
+  localStorage.setItem("myDetergents" , detergents_json);
+  
+  let myDetergents = localStorage.getItem("myDetergents");
+//console.log("myDetergents:", myDetergents);
+  myDetergents = JSON.parse(myDetergents);
+  //console.log("myDetergents:",myDetergents)
+
+
+function showProduct(){
+    let data_div = document.getElementById("data")
+    myDetergents.forEach(function(Products){
+    
+    let div = document.createElement("div");
+
+    let p_name = document.createElement("p")
+    p_name.innerText = Products.name;
+
+    let p_price = document.createElement("p");
+    p_price.innerText = Products.price;
+
+    let image = document.createElement("img")
+     image.src = Products.image;
+     
+     div.append(image, p_name,p_price);
+
+     data_div.append(div)
+    });
+}
+    showProduct();
+    </script>
+</body>
+</html>
+ 
+ 

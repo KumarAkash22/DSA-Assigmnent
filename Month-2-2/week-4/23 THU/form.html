@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<style>
+
+</style>
+<body>
+    <h1>Sign In</h1>
+    <form id="myForm" onsubmit="signup(event)" action="">
+        <input type="text" id="name" placeholder="Name"/>
+        <input type="email" id="email" placeholder="Enter the Email Id"/>
+        
+        <input type="password"  id="password" placeholder="Password"/>
+        <input type="submit"/>
+        
+    </form>
+</body>
+<script>
+    function signup(e){
+        e.preventDefault();
+        let myForm = document.getElementById("myForm");
+        let name = myForm.name.value;
+        let email = myForm.email.value;
+        let password = myForm.password.value;
+        // console.log(name,email,password)
+        if(localStorage.getItem("users")===null){
+            localStorage.setItem("users",JSON.stringify([]));
+        }
+        let user ={
+            name,
+            email,
+            password
+        };
+
+        let arr = JSON.parse(localStorage.getItem("users"));
+
+        // let all_user = JSON.parse(localStorage.getItem("users"));
+        // all_user.forEach(function(user) {
+        //     if(email === user.email && password === user.password){
+        //        window.location.href="index.html"
+        //     }
+        // });
+
+    }
+</script>
+</html>

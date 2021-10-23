@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+ <html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=divice-width,initial-scal=1.0'>
+<title>Document</title>
+<style>
+ #bg{
+     width:500px;
+     height: 500px;
+     margin-left: 400px;
+     margin-top: 100px;
+     background-color: rgb(52, 52, 238);
+     border-radius: 8px;
+ }
+ #btn{
+     padding: 20px;
+     font-size: 22px;
+     width: 180px;
+     border-radius: 8px;
+     margin-left: 280px;
+     margin-top: 380px;
+     background-color: brown;
+ }
+</style>
+</head>
+<body>
+    <div id="bg">
+        <button id="btn">SUBMIT</button>
+    </div>
+</body>
+<script>
+    var btn = document.getElementById("bg");
+    var btn1 = document.getElementById("btn")
+    function chnge(){
+        btn1.style.background = "red"
+        
+    }
+    btn.addEventListener("mouseover",chnge);
+    function chnge1(){
+        btn1.style.background = "blue"
+        
+    }
+    btn.addEventListener("mouseout",chnge1);
+    
+</script>
+</html>
+ 
+ 

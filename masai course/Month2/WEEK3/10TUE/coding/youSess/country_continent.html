@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+ <html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=divice-width,initial-scal=1.0'>
+<title>Document</title>
+<style>
+ 
+</style>
+</head>
+<body>
+    <label>Country Name</label>
+    <input type="text" id="country"/>
+    <button onclick="check_continent()">Check Continent</button>
+    <script>
+        function check_continent() {
+            var country = document.getElementById("country").value;
+            var message = document.createElement('p');
+            switch(country){
+    case "India":
+    message.textContent = "Continent is Asia";
+        break;
+    case "United States of America":
+    message.textContent = "Continent is North America";
+        break;
+    case "China":
+    message.textContent = "Continent is Asia";
+        break;
+    case "Nepal":
+    message.textContent = "Continent is Asia";
+        break;
+    case "Australia":
+    message.textContent = "Continent is Australia";
+        break;
+    case "France":
+    message.textContent = "Continent is South America";
+        break;
+    case "Germany":
+    message.textContent = "Continent is Europe";
+        break;
+    case "South Africa":
+    message.textContent = "Continent is Africa";
+        break;
+    case "Nigeria":
+    message.textContent = "Continent is Africa";
+        break;
+    case "Mexico":
+    message.textContent = "Continent is North America";
+        break;
+    case "Argentina":
+    message.textContent = "Continent is South America";
+        break;
+    case "Brazil":
+    message.textContent = "Continent is South America";
+        break;
+    case "Canada":
+    message.textContent = "Continent is North America";
+        break;
+    case "Singapore":
+    message.textContent = "Continent is Asia";
+        break;
+    case "Sweden":
+    message.textContent = "Continent is Africa";
+        break;
+        default:
+            break;
+}
+        console.log(country);
+        document.body.appendChild(message);
+    }
+    </script>
+</body>
+</html>
+ 
+ 

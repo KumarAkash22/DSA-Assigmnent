@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#nav{
+    font-size: 30px;
+    background-color: yellow;
+    margin: 10px;
+    padding: 7px;
+    height: 40px;
+    width: 900px;
+}
+div > div{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    display: inline-block;
+    margin: 15px;
+}
+div > div:nth-child(2){
+    background-color: #00fe2a;
+}
+div > div:nth-child(3){
+    background-color: #5762ef;
+}
+div > div:nth-child(4){
+    background-color: #989898;
+}
+/* extra small device(600px and down)*/
+@media  only screen and (max-width: 600px){
+    div > div    {
+    width: 500px;
+    height: 100px;
+    background-color: red;
+    margin: 15px;
+    margin-right: 15px;
+    }
+    #nav {
+        width: 500px; ;
+    }
+}
+/* small device (600 and up) */
+@media  only screen and (min-width: 600px){
+    div > div    {
+    width: 500px;
+    height: 100px;
+    background-color: red;
+    margin: 15px;
+    margin-right: 15px;
+    }
+    #nav {
+        width: 500px; ;
+    }
+}
+@media only screen and (min-width: 768px){
+    div > div    {
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    margin: 15px;
+    margin-right: 15px;
+    }  
+    #nav {
+        width: 700px; ;
+    }  
+}
+@media only screen and(min-width:950px){
+    div > div{
+    width: 200px;
+    height: 200px;
+    background-color: red;
+    display: inline-block;
+    margin: 15px;
+}
+#nav {
+    width: 900px; ;
+    }
+}
+</style>
+<body>
+    <div id="nav">Navigation</div>
+    <div id="box">
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+        <div>Box 4</div>
+    </div>
+</body>
+</html>

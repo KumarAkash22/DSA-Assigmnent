@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewellery</title>
+</head>
+<style>
+    #products{
+        margin: 5% 5% 5% 5%;
+        
+        padding-top: 1%;
+        height: 1000px;
+        display:  grid;
+        grid-template-columns:20% 20% 20% 20%;
+        grid-template-rows: 32% 32% 32% 32%;
+        grid-gap: 5%;
+        justify-content: center;
+    }
+    img{
+        width: 70%;
+    }
+</style>
+<body>
+    <h1>LocalStorage  form first Page</h1>
+    <a href="Products.html"><button>Go to Cart</button></a>
+    <div id="products"></div>
+    
+    
+</body>
+<script>
+    let data = [
+        {
+        name : "Italian Designer Non Precious Metal Jewellery Set ",
+        price: "375",
+        img: "https://m.media-amazon.com/images/I/61ZA0394h7L._AC_UL480_FMwebp_QL65_.jpg"
+        },
+        {
+        name : "Jewellery Set Gold Plated",
+        price: "698",
+        img: "https://m.media-amazon.com/images/I/71dHcvcv2XL._AC_UL480_FMwebp_QL65_.jpg"
+        },
+        {
+         name : "Zaveri Pearls Pink & Green",
+        price: "449",
+        img: "https://m.media-amazon.com/images/I/71mGNI1uZES._AC_UL480_QL65_.jpg"
+        },
+        
+        {
+        name : "Traditional Temple Choker Necklace Set",
+        price: "766",
+        img: "https://m.media-amazon.com/images/I/71yqFrgW3QL._AC_UL480_QL65_.jpg"
+        },
+        {
+        name : "Gold Plated Pearl ",
+        price: "698",
+        img: "https://m.media-amazon.com/images/I/61Yf6Gbl-fL._AC_UL480_FMwebp_QL65_.jpg"
+        },
+        {
+        name : "U Uzan B2 Fashion Jewellery",
+        price: "466",
+        img: "https://m.media-amazon.com/images/I/71GOx8L8hVL._AC_UL480_QL65_.jpg"
+        },
+        
+        {
+        name : "Brass Gold",
+        price: "399",
+        img: "https://m.media-amazon.com/images/I/31xvMBAURKL._UX395_.jpg"
+        },
+        {
+        name : "Red Pearls",
+        price: "349",
+        img: "https://m.media-amazon.com/images/I/91qmF37adRL._UX625_.jpg"
+        },
+        {
+        name : "Green Meenakari",
+        price: "450",
+        img: "https://m.media-amazon.com/images/I/71mGNI1uZES._UY695_.jpg"
+        },
+        {
+        name : "Zaveri Pearls Gold",
+        price: "448",
+        img: "https://m.media-amazon.com/images/I/71b4QnPcdSL._AC_UL480_QL65_.jpg"
+        },
+    ];
+
+    let parent = document.getElementById("products")
+    function showProducts() {
+      data.forEach(function (product) {
+      console.log(product.name);
+      let div =document.createElement("div");
+      let img = document.createElement("img");
+      img.src = product.img;
+      let product_price = document.createElement("p");
+      product_price.textContent = product.price;
+      let product_name = document.createElement("p");
+      product_name.textContent = product.name;
+
+      let addtocard_btn = document.createElement("button");
+      addtocard_btn.innerText = "Add to Cart" 
+
+      addtocard_btn.onclick = function() {
+          addtoCart(product)
+      };
+
+      div.append(img,product_name,product_price,addtocard_btn);
+      parent.append(div);
+        })
+    }
+showProducts();
+
+if(localStorage.getItem("cart")===null){
+    localStorage.setItem("cart",JSON.stringify([]));
+}
+  function addtoCart(p) {
+      let products_cart = JSON.parse(localStorage.getItem("cart"));
+      products_cart.push(p);
+      localStorage.setItem("cart",JSON.stringify(products_cart));
+
+      console.log(products_cart)
+  }
+</script>
+</html>

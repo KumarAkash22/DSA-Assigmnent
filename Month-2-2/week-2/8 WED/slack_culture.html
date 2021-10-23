@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        width: 94%;
+        height: 700px;
+        
+        margin: 3%;
+    }
+    #box1{
+        align-items: center;
+        text-align: center;
+    }
+    .pbox1{
+        width: 43%;
+        margin-left: 440px;
+        font-size: 20px;
+    }
+    .font{
+        font-size: 20px;
+        width: 400px;
+    }
+    #box-2{
+        display: grid;
+        grid-template: "A A"
+                       "B C"
+                       "D E";
+        
+        gap: 40px;
+        margin: 80px 330px;               
+    }
+    .top{
+        margin-top: 66px;
+    }
+
+</style>
+<body>
+    <div id="box">
+        <div id="box1">
+            <h2>Working and thriving</h2>
+            <p class="pbox1">We want people to thrive at Slack; we believe you do your best 
+                work when you feel your best. Here are a just a few benefits 
+                we're proud to provide our team with. 
+            </p>
+        </div>
+        <div id="box-2">
+        <div>
+            <h2 >Learning & development</h2>
+            <p class="font">Receive an annual allowance for professional
+                 development,  plus a monthly bonus you can you 
+                towards anything. That means anything: a gym membership,
+                your pet sitter,a new work look. Whatever matters most to you.
+            </p>
+            <hr>
+        </div>
+        <div>
+            <h2>Health & wellness</h2>
+            <p class="font">Free medical, dental care and eye care for you and your family - 
+                Slack pays 100% of your premiums.
+            </p>
+            <hr class="top">
+        </div>
+        <div>
+            <h2>Parental leave</h2>
+            <p class="font">A lot of us have families, of all sorts of shapes and sizes, and we 
+                welcome each new addition with generous parental leave and "bonding leave".
+            </p>
+        </div>
+        <div>
+            <h2>Happier Weekdays</h2>
+            <p class="font">A culture light on meetings (or that's our aim, at least) with 
+                guest speakers and opportunities to get to know your team better 
+                through events like weekly catered lunches and breakfasts, Thursday Socials 
+                and game nights. But we don't stay in the office 24/7.
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

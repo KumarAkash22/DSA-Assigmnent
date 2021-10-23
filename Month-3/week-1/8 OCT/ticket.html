@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Tatkal Booking System</h1>
+    <button onclick="chechAvailability">Check Availability</button>
+</body>
+    <script>
+        let BtoG = ["Dhoni","Kohli","Alan","groot","Jathalal","Shaktiman","Mr Bean","Bhvan Bam"];
+        
+        let MtoG = ["Dhoni","Kohli","Alan","groot","Jathalal","Shaktiman","Mr Bean","Bhvan Bam"];
+
+        let PtoG = ["Dhoni","Kohli","Alan","groot","Jathalal","Shaktiman","Mr Bean","Bhvan Bam"];
+
+        async function chechAvailability(){
+            let mypromise = new Promise(function(resolve,reject){
+                setInterval(function(){
+                if(BtoG.length === 4){
+
+                    resolve(`BtoG is available`)
+                }
+
+                if(MtoG.length === 4){
+
+                    resolve(`MtoG is available`)
+                }
+
+                else if(PtoG.length ===4){
+
+                    resolve(`PtoG is available`);
+                }
+            },1000);
+
+        })
+
+            let res = await promise;
+            console.log(res)
+        }
+
+
+        function cancelTicket(){
+            //cancelltion speed should be random
+
+            let cancelling_speed1 = Math.round(Math.random()*5);
+            let cancelling_speed2 = Math.round(Math.random()*5);
+            let cancelling_speed3 = Math.round(Math.random()*5);
+
+            setTimeout(function(){
+                BtoG.pop();
+            },cancelling_speed1*1000)
+
+        
+            setTimeout(function(){
+                MtoG.pop();
+            },cancelling_speed1*1000)
+
+
+            setTimeout(function(){
+                PtoG.pop();
+            },cancelling_speed1*1000)
+            
+
+            
+
+            console.log(BtoG,MtoG,PtoG)
+
+        }
+
+
+        let interval = setInterval(cancelTicket)
+    </script>
+</html>

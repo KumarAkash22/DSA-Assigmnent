@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo" style="color:red" class="class1">JavaScript</div>
+  <div>
+    <input placeholder="Enter your name" id="name"/>
+    <button onclick="changeInput()">Show Input</button>
+</body>
+<script>
+//     function showInput() {
+//   alert(document.getElementById("name").value);
+// }
+function changeInput() {
+  document.getElementById("demo").innerHTML = document.getElementById("name").value;
+}
+</script>
+</html>

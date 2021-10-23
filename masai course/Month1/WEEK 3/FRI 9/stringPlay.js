@@ -1,0 +1,1 @@
+var items = "A quick BROWN fox Jumps oveR a LazY DOg";

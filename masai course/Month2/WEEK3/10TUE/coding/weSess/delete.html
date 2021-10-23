@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+ <html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=divice-width,initial-scal=1.0'>
+<title>Document</title>
+<style>
+ 
+</style>
+</head>
+<body>
+    <html>
+    <head>
+        <title>Practise Deletions</title>
+    </head>
+    <body>
+        <h1>First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <div id="headings">
+            <h5>First H5</h5>
+            <h5>Second H5</h5>
+            <h5>Third H5</h5>
+        </div>
+        <div id="cont">
+            <div class="green">First DIV</div>
+            <div class="red">Second DIV</div>
+            <div class="blue">Third DIV</div>
+            <p class="green">First P</p>
+            <p class="red">Second P</p>
+            <p class="blue">Third P</p>
+        </div>
+        <hr/>
+        <button>Remove H1</button>
+        <button onclick="remove_h3()">Remove H3</button>
+        <button>Remove H5</button>
+        <button>Remove Red</button>
+        <button onclick="remove_div()">Remove DIVS</button>
+        <script>
+            function remove_h3() {
+                var h3_items = document.querySelectorAll('h3');
+                h3_items[0].remove();
+                h3_items[1].remove();
+            }
+
+            function remove_div() {
+                var parent = document.getElementById('cont');
+                var div_ch = parent.querySelectorAll('div');
+                for(var i = 0; i < div_ch.length; i++){
+                    div_ch[i].remove();
+                }
+            }
+        </script>
+    </body>
+</html>
+</body>
+</html>
+ 
+ 

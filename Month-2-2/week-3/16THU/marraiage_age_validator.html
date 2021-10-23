@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+ <html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=divice-width,initial-scal=1.0'>
+<title>Document</title>
+<style>
+ 
+</style>
+</head>
+<body>
+    <label>Year of Birth</label>
+    <input id="year" type="number"/>
+    <select id="priority">
+        <option >Male</option>
+        <option >Female</option>
+        <option >Other</option>
+    </select>
+    <button>Check</button>
+    <script>
+            var listen = document.querySelector("button");
+            listen.addEventListener("click",function(){
+            var year = document.getElementById("year").value;
+            var gender = document.getElementById("priority").value;
+            var age = 2021 - year;
+            //console.log(gender);
+            
+            console.log(age);
+             if(age > 18 && gender == "Female"){
+                alert("you are eligible");
+            }else if(age < 18 && gender == "Female"){
+                alert("You are not eligible");
+            } else if(age > 21 && gender == "Male"){
+                alert("you are eligible");
+            }else{
+                alert("You are not eligible");
+            }  
+            
+            
+            
+            });
+    </script>
+</body>
+</html>
+ 
+ 

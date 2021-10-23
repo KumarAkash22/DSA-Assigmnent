@@ -1,0 +1,10 @@
+var stud1 = 10;
+var stud2 = 20;
+var stud3 = 30;
+var stud4 = 40;
+var stud5 = 50;
+var stud6 = 60;
+totalStud = stud1 + stud2 + stud3 + stud4 + stud5 + stud6;
+totalNoStud = 6;
+var average = totalStud / totalNoStud;
+console.log(average);

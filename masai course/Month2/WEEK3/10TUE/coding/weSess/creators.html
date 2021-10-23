@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+ <html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=divice-width,initial-scal=1.0'>
+<title>Document</title>
+<style>
+ 
+</style>
+</head>
+<body>
+    <html>
+    <head>
+        <title>Practise Creators</title>
+    </head>
+    <body>
+        <div id="headings">
+        </div>
+        <div id="cont">
+        </div>
+        <ul id="vikings">
+            <li>Priyanshu</li>
+        </ul>
+        <button onclick="create_h1()">Create H1</button>
+        <button>Create 2 H3</button>
+        <button>Create DIVS</button>
+        <button onclick="add_students()">Add Students</button>
+        <button onclick="add_copy()">Add Copyright</button>
+        <script>
+            var students = ['Ajay','Akshay','Anusha','Chandrashekhara','Haren','Hasaan','Mahesh','Mousumi','Pavan','Rahul','Sumanta','Venkatesh','Vetrival','Vijayendra'];
+            function create_h1(){
+                var parent = document.getElementById("headings");
+                var h1 = document.createElement('h1');
+                h1.textContent = "Masai School";
+                parent.appendChild(h1)
+            }
+
+            function add_students() {
+                var parent = document.getElementById("vikings");
+                for( var i = 0; i < students.length; i++){
+                    var child = document.createElement('li');
+                    child.textContent = students[i];
+                    parent.appendChild(child);
+                }
+            }
+
+            function add_copy(){
+                var parent = document.body;
+                var btn = document.querySelector('button')
+                var child = document.createElement('p');
+                child.textContent = "@ masai 2019";
+                parent.insertBefore(child,btn);
+            }
+        </script>
+    </body>
+</html>
+</body>
+</html>
+ 
+ 

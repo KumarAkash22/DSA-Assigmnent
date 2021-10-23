@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=divice-width,initial-scal=1.0">
+        <title>registration</title>
+        <style>
+            #register > div{
+                width: 500px;
+                float: left;
+                margin: 50px;
+            }
+            #register {
+                width: 1240px;
+                margin: auto;
+            }
+            label,input{
+                display: block;
+            }
+            #reg-form input{
+                border: 1px solid black;
+                width: 300px;
+                font-size: 32px;
+            }
+            #reg-form label{
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+            input+label{
+                margin-top: 30px;
+            }
+            #reg-form input+p {
+                margin-top: 4px;
+                color: red;
+            }
+            input[type="submit"]{
+                background-color: black;
+                color: white;
+                margin-top: 10px;
+            }
+            #reg-info {
+                background-color: black;
+                color: white;
+                padding: 80px 20px;
+            }
+            #reg-info > p:nth-child(odd){
+                font-size: 32px;
+                margin-bottom: 24px;
+                margin-top: 2px;
+            }
+            #reg-info>p:nth-child(even){
+                font-size: 32px;
+            }
+            #reg-info >p:nth-child(2){
+                font-size: 48px;
+            }
+            .size{
+                font-size: 24px; 
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="register">
+            <div id="reg-form">
+                <form>
+                    <label class="size">NAME</label>
+                    <input type="text"/>
+                    <label class="size">EMAIL</label>
+                    <input type="text"/>
+                    <label class="size">MOBILE</label>
+                    <input type="text"/>
+                    <p>Enter a valid mobile number</p>
+                    <input type="submit" value="REGISTER"/>
+                </form>
+            </div>
+            <div id="reg-info">
+                <p>NAME</p>
+                <p>MASAI</p>
+                <p>EMAIL</p>
+                <p>email@masai.com</p>
+                <p>MOBILE</p>
+                <p>8107715716</p>
+            </div>
+        </div>
+    </body>
+</html>

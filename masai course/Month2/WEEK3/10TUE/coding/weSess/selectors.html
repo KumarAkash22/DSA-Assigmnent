@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+ <html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=divice-width,initial-scal=1.0'>
+<title>Document</title>
+<style>
+ 
+</style>
+</head>
+<body>
+    <html>
+    <head>
+        <title>Practise Selectors</title>
+    </head>
+    <body>
+        <h1>First H1</h1>
+        <h1>Second H1</h1>
+        <h3>First H3</h3>
+        <h3>Second H3</h3>
+        <h5>First H5</h5>
+        <h5>Second H5</h5>
+        <h5>Third H5</h5>
+        <div class="green">First DIV</div>
+        <div class="red">Second DIV</div>
+        <div class="blue">Third DIV</div>
+        <p class="green">First P</p>
+        <p class="red">Second P</p>
+        <p class="blue">Third P</p>
+        <hr/>
+        <button onclick="change_h1()">Change H1</button>
+        <button onclick="change_h3()">Change H3</button>
+        <button onclick="change_h5()">Change H5</button>
+        <button onclick="change_class('green')">Change Green</button>
+        <button onclick="change_class('red')">Change Red</button>
+        <button onclick="change_class('blue')">Change Blue</button>
+        <script>
+            function change_h1() {
+                var fh1 = document.querySelector('h1');
+                fh1.style.color = 'red';
+            }
+
+            function change_h3() {
+                var h3_items = document.getElementsByTagName('h3');
+                for(var i = 0; i < h3_items.length; i++){
+                    h3_items[i].style.color = "green";
+                }
+            }
+
+            function change_h5() {
+                var h5_items = document.querySelectorAll('h5');
+                for(var i = 0; i < h5_items.length; i++){
+                    h5_items[i].style.color = "#0000FF";
+                }
+            }
+
+            function change_class(name) {
+                var items = document.querySelectorAll('.'+name);
+                for(var i = 0; i < items.length; i++){
+                    items[i].style.color = name;
+                }
+            }
+
+        </script>
+    </body>
+</html>
+</body>
+</html>
+ 
+ 

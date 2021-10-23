@@ -1,0 +1,72 @@
+const detergents = [
+    {
+      name: "Nirma",
+      price: "10",
+      image: "https://n2.sdlcdn.com/imgs/b/3/0/Nirma-Detergent-Powder-Nirma-Washing-SDL602226993-1-15845.jpg",
+    },
+
+    {
+      name: "Surf excel",
+      price: "20",
+      image: "https://m.media-amazon.com/images/I/61rDJVoKpeL._SL1000_.jpg",
+    },
+    {
+      name: "Tide",
+      price: "30",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Tide_logo.svg/1200px-Tide_logo.svg.png",
+    },
+    {
+      name: "wheel",
+      price: "60",
+      image: "https://5.imimg.com/data5/QV/MX/MY-8609988/wheel-powder-500x500.jpg",
+    },
+    {
+      name: "ghadi",
+      price: "40",
+      image: "https://m.media-amazon.com/images/I/61SZYb3O-wL._SL1399_.jpg",
+    },
+    {
+      name: "ariel",
+      price: "50",
+      image: "https://5.imimg.com/data5/HE/VA/SO/SELLER-46615966/111-500x500.jpg",
+    },
+  ];
+
+
+
+
+//localStorage 
+
+<!DOCTYPE html>
+ <html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=divice-width,initial-scal=1.0'>
+<title>Document</title>
+<style>
+ 
+</style>
+</head>
+<body>
+    <form onsubmit="submitForm(event)">
+        <input type="text" placeholder="Enter Movie Name" id="name">
+        <input type="number" id="rating" placeholder="Rating">
+        <input type="submit">
+    </form>
+    <script>
+        function submitForm(e){
+            e.preventDefault();
+
+            const movie = {
+                movieName: document.getElementById("name").value,
+                rating: document.getElementById("rating").value,
+            };
+            const movie_json = JSON.stringify(movie);
+            localStorage.setItem("Movie",movie_json)
+
+        }
+    </script>
+</body>
+</html>
+ 
+ 

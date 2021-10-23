@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=divice-width,initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            .row {
+                max-width: 1000pxpx;
+                margin: auto;
+                display: flex;
+            }
+            .row > div {
+                height: 150px;
+                flex-basis: 150px;
+                background-color: teal;
+                border-radius: 6px;
+                margin: 10px;
+               
+            }
+            .flex-fill {
+                flex-grow: 1;
+            }
+            /* #grid{
+                display: grid;
+                grid-template-columns: repeat();
+                grid-template-rows: repeat();
+                gap: 20px;
+            }
+            #template{
+                display: grid;
+                gap: 20px;
+            }
+            #top {
+                background-color: yellow;
+                height: 100px;
+                grid-area: tbox;
+            }
+            #left {
+                background-color: yellow;
+                height: 400px;
+                grid-area: lbox;
+            }
+            #right {
+                background-color: yellow;
+                height: 400px;
+                grid-area: rbox;
+            }
+            @media screen and (max-width: 600px){
+                #template{
+                    grid-template: 'tbox'
+                                    'rbox'
+                                    'lbox'
+                }
+            }
+            @media screen and (max-width: 600px){
+                #template{
+                    grid-template: 'tbox'
+                                    'lbox lbox'
+                }
+            }
+            @media screen and (max-width: 600px){
+                #template{
+                    grid-template: 'tbox tbox'
+                                    'rbox rbox'
+                }
+            } */
+
+        </style>
+    </head>
+    <body>
+        <div class="row">
+            <div></div>
+            <div class="flex-fill"></div>
+            <div></div>
+        </div>
+        <div class="row">
+            <div class="flex-fill"></div>
+            <div ></div>
+            <div></div>
+        </div>
+        <div class="row">
+            <div></div>
+            <div></div>
+            <div class="flex-fill"></div>
+        </div>
+        <!-- <div id="grid">
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>10</div>
+        </div>
+        <div id="template">
+            <div id="top"></div>
+            <div id="left"></div>
+            <div id="right"></div>
+        </div> -->
+    </body>
+    </html>    

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    img{
+        width: 90%;
+    }
+</style>
+<body>
+    <h1>slideshow</h1>
+    <div id="mySlideshow"></div>
+</body>
+</html>
+
+<script>
+    let images =[
+    "https://images.pexels.com/photos/733745/pexels-photo-733745.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "https://images.pexels.com/photos/3311574/pexels-photo-3311574.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    "https://images.pexels.com/photos/4536012/pexels-photo-4536012.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+
+    ]
+    let container = document.getElementById("mySlideshow");
+    function startslideshow(){
+        let counter = 0;
+        let interval = setInterval(function(){
+            container.innerHTML = null;
+            if(counter === images.length){
+                counter= 0;
+            } 
+        let img = document.createElement("img");
+        img.src = images[counter];
+        container.append(img);
+        counter = counter+1
+    }, 3000)
+    }
+    startslideshow();
+</script>

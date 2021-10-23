@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+ <html lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=divice-width,initial-scal=1.0'>
+<title>Document</title>
+</head>
+<style>
+ img{
+     width: 5%;
+ }
+</style>
+
+<body>
+    <h1>Cart Page</h1>
+    <h1 id="total"></h1>
+    <div id="data"></div>
+    <script>
+       let cart_data =  JSON.parse(localStorage.getItem("cart"));
+       let data_div = document.getElementById("data");
+       var total = 0;
+       cart_data.forEach(function(product){
+        let div = document.createElement("div"); 
+        console.log(div);
+        let p_name = document.createElement("p");
+        p_name.textContent = product.name;
+        console.log(p_name);
+        let p_price = document.createElement("p");
+        p_price.innerText = product.price;
+
+        let img = document.createElement("img");
+        img.src = product.image;
+
+      div.append(img, p_name, p_price);
+
+      data_div.append(div);
+
+        total = total + Number(product.price);
+       });
+       let total_h1 = document.getElementById("total");
+       total_h1.innerHTML = 'Total Price- ₹' + total;
+           
+       console.log("total", total)
+       function makePayment(){
+         setTimeout(function(){
+           alert("Payment Successful");
+         },4000)
+       }
+    </script>
+</body>
+</html>
+ 

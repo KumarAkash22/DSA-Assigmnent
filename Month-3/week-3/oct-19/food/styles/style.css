@@ -1,0 +1,23 @@
+#navbar {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 4%;
+    padding-right: 4%;
+    border: solid 1px black;
+  }
+  input{
+      width: 30%;
+      height: 35px;
+      border: 2px solid red;
+      margin: 20px;
+  }
+
+  #options {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #options h3 {
+    padding-left: 30px;
+    padding-right: 10px;
+  }
