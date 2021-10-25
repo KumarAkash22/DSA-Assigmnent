@@ -1,7 +1,7 @@
 function generateSubsequence(str,newStr,current){
     // console.log(str)
     if(newStr.length > 0){
-        console.log(newStr);
+        console.log(newStr.join(" "));
     }
     if(current == str.length){
         // console.log(str)
@@ -10,7 +10,7 @@ function generateSubsequence(str,newStr,current){
     
     for(var i = current; i < str.length; i++){
         // console.log(str)
-        newStr+= str[i];
+        newStr.push(str[i]);
         generateSubsequence(str,newStr,i+1);
         newStr.pop();
     

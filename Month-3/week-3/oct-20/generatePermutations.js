@@ -1,11 +1,12 @@
-function permutation(arr,current){
+function permutation(arr,current,newArr){
     if(current == arr.length){
-        console.log(arr.join(" "));
+      newArr.push(arr.join(" "))
+        // console.log(newArr);
         return;
     }
     for(var i = current; i < arr.length; i++){
         [arr[i],arr[current]] = [arr[current],arr[i]];
-        permutation(arr,current+1);
+        permutation(arr,current+1,newArr);
         [arr[i],arr[current]] = [arr[current],arr[i]];
     }
 }
@@ -15,8 +16,9 @@ function runProgram(input) {
     var N = +input[0];
     var arr = input[1].trim().split(" ").map(Number);
     var current = 0;
-    permutation(arr,current);
-
+    let newArr = [];
+    permutation(arr,current,newArr);
+    console.log(newArr.sort().join("\n"))
    
   }
   if (process.env.USERNAME === "admin") {
