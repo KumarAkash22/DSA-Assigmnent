@@ -25,21 +25,18 @@
     },
     {
       "id": 6,
-      "name": "food",
-      "price": "123",
-      "active": true
+      "name": "raj",
+      "price": "5000"
     },
     {
       "id": 7,
-      "name": "cadbarry",
-      "price": "80",
-      "active": true
+      "name": "vikas",
+      "price": "1000"
     },
     {
       "id": 8,
-      "name": "Dark Cholocate",
-      "price": "80",
-      "active": true
+      "name": "rakesh",
+      "price": "3000"
     },
     {
       "id": 9,

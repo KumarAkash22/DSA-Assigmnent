@@ -20,23 +20,58 @@
     <button onclick="addProduct()">Add Product</button>
 </div>
   <h1>Delete Product</h1>
+  
 <div>
+    
     <input type="number" id="product_id" placeholder="Id"/>
 
     <button onclick="deleteProduct()">Delete Product</button>
+</div>
+
+<h1>Update Product</h1>
+    <div>
+    <input type="number" id="Getid" placeholder="Getid"/>
+    <input type="text" id="Upname" placeholder="Name"/>
+    <input type="number" id="Upprice" placeholder="Price"/>
+    <button onclick="UpdateProduct()">Update Product</button>
 </div>
 </body>
 </html>
 
 
 <script>
-//     async function getData(){
-//         let res = await fetch(`http://localhost:3000/api/products`);
-//         let data = await res.json();
-//         console.log(data)
-//     }
-// getData()
+    //Get Data
+    async function getData(){
+        let res = await fetch(`http://localhost:3000/api/products`);
+        let data = await res.json();
+        console.log(data)
+    }
+getData()
 
+//Updata data
+async function UpdateProduct(){
+    var id = document.getElementById("Getid").value;
+    let data ={
+        id: document.getElementById("Upid").value,
+        name: document.getElementById("Upname").value,
+        price: document.getElementById("Upprice").value,
+    };
+    try{
+    let response = await fetch(`http://localhost:3000/api/products/${id}`,{
+        method:'PUT',
+        body:JSON.stringify(data),
+        headers:{
+            'Content-Type': "application/json"
+        }
+    })
+       let d = await response.json();
+       console.log(d);
+}catch(e){
+    console.log(e);
+}
+}
+
+//Add Product
 async function addProduct(){
     let data ={
         id: document.getElementById("id").value,
@@ -58,6 +93,7 @@ try{
 }   
 }
   
+// Delete Product
 async function deleteProduct(){
     let id = document.getElementById("product_id").value
     let response = await fetch(`http://localhost:3000/api/products/${id}`,{
