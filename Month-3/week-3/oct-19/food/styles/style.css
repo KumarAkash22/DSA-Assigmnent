@@ -21,3 +21,22 @@
     padding-left: 30px;
     padding-right: 10px;
   }
+  #btn{
+    width: 80px;
+    margin-left: -10px;
+    margin-top: -40px;
+  }
+  img{
+    width: 400px;
+  }
+  #dataName{
+    border: solid red 2px;
+  }
+  #dataImg{
+    border: solid red 2px;
+    justify-content: center;
+  }
+  p{
+    font-size: 20px;
+    width: 900px;
+  }

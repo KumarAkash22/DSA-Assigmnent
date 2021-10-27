@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./styles/style.css"/>
   <body>
       <div id="navbar"></div>
+      <div id="dataImg"></div>
+      <!-- <div id="dataName"></div> -->
   </body> 
 </html>
 <script type="module">
@@ -17,24 +19,44 @@ import navbar from "./components/navbar.js";
 let navbar_div = document.getElementById("navbar")
 
 navbar_div.innerHTML = navbar();
+var divImg = document.getElementById("dataImg");
+var divName = document.getElementById("dataName");
 
 async function showdata(){
 let res  = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s&apikey=1")
-// let res  = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata")
-// .then(function(res){
-//     res.json()
-    
-//     })
-//     .then(function(res){
-//         console.log(res);
-// })
-// .catch(function(err){
-//     console.log(err)
-
-// })
 let data = await res.json();
-console.log(data) 
+// console.log(data) ;
+appendData(data);
 
 }
 showdata();
+function appendData(data){
+  var meals = data.meals;
+  // console.log(meals);
+  meals.forEach(ele => {
+    ele.idMeal;
+    // console.log(ele.idMeal);
+    var name = document.createElement("p");
+    name.textContent = ele.strMeal;
+    var img = document.createElement("img");
+    img.src = ele.strMealThumb;
+    divImg.append(img,name);
+    // divName.append();
+
+  });
+//search movies - search
+//fetch, 
+
+}
+async function searchMeals(){
+
+    let qua = document.getElementById("qua").value
+    let reciepy = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${qua}`);
+    let ans = await reciepy.json();
+    console.log(ans)
+  }
+  // searchMeals()
+  let btn = document.getElementById("btn")
+  btn.addEventListener("click",searchMeals)
+
 </script>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+    <link rel="stylesheet" href="./styles/style.css"/>
+  <body>
+      <div id="navbar"></div>
+      <input placeholder= "receipe by name" id = "qua" />
+       <button id="btn">CLICK TO SEARCH</button>
+       <div id="dataDiv"></div>
+  </body> 
+</html>
+<script type="module">
+
+import navbar from "./components/navbar.js";
+let navbar_div = document.getElementById("navbar")
+
+navbar_div.innerHTML = navbar();
+var div = document.getElementById("dataDiv");
+async function searchMeals(){
+
+let qua = document.getElementById("qua").value
+let reciepy = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${qua}`);
+let ans = await reciepy.json();
+console.log(ans)
+appendData(ans);
+}
+// searchMeals()
+let btn = document.getElementById("btn")
+btn.addEventListener("click",searchMeals);
+
+function appendData(ans){
+  var meals = ans.meals;
+  console.log(meals[0]);
+  // meals.forEach(ele => {
+  //   ele.idMeal;
+  var name = document.createElement("p");
+    name.textContent = meals[0].strMeal;
+    var img = document.createElement("img");
+    img.src = meals[0].strMealThumb;
+    var instruction = document.createElement("p");
+    instruction.textContent = meals[0].strInstructions;
+    var category = document.createElement("p");
+    category.textContent = meals[0].strCategory;
+    var tag = document.createElement("p");
+    tag.textContent = meals[0].strTags;
+    // for(var i = 1; i < 10; i++){
+    //   var recepy = document.createElement("p");
+    //   recepy.textContent = meals[0].strIngredient[i]
+    // }
+    div.append(name,img,category, tag,instruction);
+  // });
+    }
+
+</script>

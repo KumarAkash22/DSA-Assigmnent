@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+    <link rel="stylesheet" href="./styles/style.css"/>
+  <body>
+      <div id="navbar"></div>
+      <div id="dataDiv"></div>
+  </body> 
+</html>
+<script type="module">
+
+import navbar from "./components/navbar.js";
+let navbar_div = document.getElementById("navbar")
+navbar_div.innerHTML = navbar();
+var div = document.getElementById("dataDiv");
+async function latestReceipy(){
+  var receipy = await fetch("https://www.themealdb.com/api/json/v1/1/random.php");
+  var latest = await receipy.json();
+  console.log(latest);
+  appendData(latest);
+}
+latestReceipy()
+function appendData(latest){
+  var meals = latest.meals;
+  console.log(meals[0]);
+  // meals.forEach(ele => {
+  //   ele.idMeal;
+  var name = document.createElement("h2");
+    name.textContent = meals[0].strMeal;
+    var img = document.createElement("img");
+    img.src = meals[0].strMealThumb;
+    var instruction = document.createElement("p");
+    instruction.textContent = meals[0].strInstructions;
+    var category = document.createElement("h3");
+    category.textContent = meals[0].strCategory;
+    var ing1 = document.createElement("h4");
+    ing1.textContent = meals[0].strIngredient1;
+    var ing2 = document.createElement("h5");
+    ing2.textContent = meals[0].strIngredient2;
+    var ing3 = document.createElement("h5");
+    ing3.textContent = meals[0].strIngredient3;
+    var ing4 = document.createElement("h5");
+    ing4.textContent = meals[0].strIngredient4;
+    var ing5 = document.createElement("h5");
+    ing5.textContent = meals[0].strIngredient5;
+    var ing6 = document.createElement("h5");
+    ing6.textContent = meals[0].strIngredient6;
+   
+
+    // for(var i = 1; i < 10; i++){
+    //   var recepy = document.createElement("p");
+    //   recepy.textContent = meals[0].strIngredient[i]
+    // }
+    div.append(name,img,category, ing1, ing2, ing3, ing4, ing5, ing6, instruction);
+  // });
+    }
+
+</script>
