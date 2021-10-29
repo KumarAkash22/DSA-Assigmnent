@@ -1,0 +1,43 @@
+#navbar{
+    display: flex;
+    width: 98%;
+    margin: 1%;
+    height: 50px;
+    border: 1px solid blue;
+}
+.three{
+width: 25%;
+height: 0px;
+border: 1px solid gray;
+margin: 10px;
+margin-left: 40px;
+  
+}
+#img{
+width: 7%;
+height: 80px;
+margin-top: -15px;
+margin-left: 35px;
+}
+#query{
+width: 35%;
+height: 30px;
+margin-left: 15%;
+margin-top: 5px;
+}
+button{
+height: 35px;
+margin-top: 5px;
+}
+#noti{
+margin-left: 22%;
+}
+#login{
+background-color: none;
+margin-left: 2%;
+}
+#videos{
+    display: grid;
+    grid-template-columns: repeat(4,20%);
+    grid-gap: 5%;
+}
