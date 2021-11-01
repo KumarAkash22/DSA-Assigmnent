@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    input {
+      width: 200px;
+    }
+
+    #movies {
+      height: 200px;
+      width: 206px;
+      border: 1px solid black;
+      overflow: scroll;
+      border-top: none;
+    }
+    
+    #dataDiv{
+        margin-top: 2%;
+        font: 30px;
+        background-color: bisque;
+        width: 20%;
+        margin-left: 700px;
+    }
+    img{
+        width: 100%;
+        height: 400px;
+    }
+  </style>
+  <body>
+    <input oninput="debounce(main,1000)" type="text" id="movie" placeholder="Enter movie name" />
+    <button id="btn">Search</button>
+    <div id="movies"></div>
+    <div id="dataDiv"></div>
+  
+  </body>
+  <script>
+    //popular Movies.
+    //https://api.themoviedb.org/4/list/1?api_key=810be2a40c65323ffb597cd7215b5696`
+
+      var timeId;
+      //4b125d6
+      //http://www.omdbapi.com/?apikey=11be6833&s=${movie_name}
+
+      let movies_div = document.getElementById("movies");
+      var div = document.getElementById("dataDiv");
+      async function searchMovies(movie_name){
+          try{
+      
+          let res = await fetch(`http://www.omdbapi.com/?apikey=11be6833&s=${movie_name}`);
+          var data = await res.json();
+          // appendData(data)
+          console.log("data:",data);
+          
+          return data; 
+      } 
+      catch(e){
+        // console.log("e:",e)
+
+      }
+      }
+    // searchMovies("inception")
+      function appendMovies(movies){
+          if(movies === undefined){
+              return false;
+          }
+          movies_div.innerHTML = null;
+          // console.log("movie==",movies)
+          movies.forEach(function(movie){
+              let p = document.createElement("p");
+              p.innerText = movie.Title;
+              movies_div.append(p);
+              // appendData(data)
+          });
+      }
+
+       async function main(){
+        let name = document.getElementById("movie").value;
+
+        if(name.length < 3){
+            return false;
+        } 
+        let res = await searchMovies(name);
+        // console.log("res==",res)
+        let movies_data = res.Search
+        appendMovies(movies_data);
+        appendData(movies_data[0])
+        // console.log(res);
+      //   console.log(res.searchMovies);
+      }
+       
+      //debouncing
+      function debounce(func, delay){
+
+        if (timeId){
+            clearTimeout(timeId);
+        }
+
+       timeId = setTimeout(function(){
+         func();
+        },delay);
+      }
+
+      
+//search movies - search
+//fetch, 
+
+
+let btn = document.getElementById("btn")
+    btn.addEventListener("click",searchMovies);
+    function appendData(data){
+        
+        // console.log(data.Title)
+        let poster = document.createElement("img");
+        poster.src = data.Poster;
+
+        let name = document.createElement("h3");
+        name.textContent ="Movie Name :- "+ data.Title;
+
+        let date = document.createElement("p");
+        date.textContent = "Released Date :- " + data.Year;
+
+        let category = document.createElement("p");
+        category.textContent = "Awards Win :- "+ data.Type;
+
+        let rating = document.createElement("p");
+        rating.textContent = "Rating :-"+ data.imdbID
+
+        if(data.Title === undefined){
+            alert("Movie not found")
+            // let undef = document.createElement("img");
+            // undef.src = "https://media1.giphy.com/media/yRGxcJicPQAus/200w.webp?cid=ecf05e47pqroa3wn1dwr6zsyyh7cftfhevpc2mbn69on0jtg&rid=200w.webp&ct=g"
+            // unde.append(undef);
+
+        }
+        else if(data.imdbRating >= 8.5){
+            div.innerHTML = null;
+            let rate = document.createElement("p")
+            rate.textContent = "Rating :- "+ data.imdbRating+ " Recommended"; 
+            div.append(poster,name,date,category,rating);
+              
+        }
+        
+        else{
+            div.innerHTML = null
+            div.append(poster,name,date,category,rating);
+        }
+    }
+
+   </script>
+ </html>
