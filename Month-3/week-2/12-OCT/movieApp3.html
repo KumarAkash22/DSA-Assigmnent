@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <style>
+    #dataDiv{
+      display: grid;
+      grid-template-columns: repeat(4, 23%);
+      gap: 2%;
+    }
+    img{
+        width: 100%;
+        height: 400px;
+    }
+    h1{
+      text-align: center;
+    }
+    
+  </style>
+  <body>
+    <h1>AKASH MOVIES APP</h1>
+    <div id="dataDiv"></div>
+  </body>
+  <script>   
+      
+      var div = document.getElementById("dataDiv");
+      async function searchMovies(){
+          //https://image.tmdb.org/t/p/original
+          let res = await fetch(`https://api.themoviedb.org/3/trending/all/day?api_key=92e277f3d43843a85558cb25e1aa78d2`)
+          let data = await res.json();  
+          console.log("data:",data.results)
+         appendData(data.results)
+
+      } 
+    searchMovies()
+    function appendData(data){
+        data.forEach((data) => {
+          var tag = document.createElement("div");
+          let name = document.createElement("h3");
+          if(data.original_title === undefined){
+            name.textContent ="Movie Name :- "+  data.original_name;
+          }else{
+            name.textContent ="Movie Name :- "+  data.original_title;
+          }
+          let poster = document.createElement("img");
+          poster.src = "https://image.tmdb.org/t/p/original"+data.poster_path;
+
+          let date = document.createElement("p");
+        date.textContent = "Released Date :- " + data.first_air_date;
+
+        let rating = document.createElement("p");
+        rating.textContent = "Rating :-"+ data.vote_average;
+
+
+        tag.append(poster,name,date,rating)
+        div.append(tag)
+        });
+    }
+
+
+   </script>
+ </html>
