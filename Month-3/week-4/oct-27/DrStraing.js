@@ -40,7 +40,7 @@ function runProgram(input) {
   //   obj[arr[i]] ? obj[arr[i]]++ : (obj[arr[i]] = 1);
   // }
   // console.log(obj)
-   
+    
   }
   if (process.env.USERNAME === "admin") {
     runProgram(`3

@@ -1,3 +1,4 @@
+// var count = 0;
 function wierdSum (n,arr,current,ans,maxNum){
   if(ans.length > 0){
       let sum = 0;
@@ -29,9 +30,9 @@ function runProgram(input){
   //    console.log(maxNum,index)
       arr.splice(index,1);
       // console.log(maxNum,index,arr)
-     count = 0;
+      count = 0;
     wierdSum(n-1,arr,current,ans,maxNum);
-    console.log(count)
+    // console.log(count)
 
     if(count > 0){
         console.log("Yes");
