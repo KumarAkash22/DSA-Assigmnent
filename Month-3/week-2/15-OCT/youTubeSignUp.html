@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YouTube Sign Up Page </title>
+</head>
+<style>
+    #signup-form {
+        width: 20px;
+    }
+    input {
+        margin-top: 5px;
+    }
+</style>
+<body>
+    <button id="btn"></button>
+    <div>
+    <div id="signup">
+        <form onsubmit="Signup(event)" id="signup-form">
+            <h1>Signup</h1>
+            <input type="text" id="name" placeholder="name"/>
+            <input type="email" id="email" placeholder="email"/>
+            <input type="password" id="password" placeholder="password"/>
+            <input type="text" id="username" placeholder="username"/>
+            <input type="mobile" id="mobile" placeholder="mobile"/>
+            <input type="text" id="description" placeholder="description"/>
+            <input type="submit"/>
+        </form>
+    </div>
+    <div id="login">
+        <form onsubmit="Login(event)" id="login-form">
+            <h1>Signup</h1>
+            <input type="text" id="user" placeholder="username"/>
+
+            <input type="password" id="pass" placeholder="password"/>
+            <input type="submit"/>
+        </form>
+    </div>
+</div> 
+</body>
+<script> 
+    function Signup(e){
+        e.preventDefault();
+        let form = document.getElementById("signup-form");
+        let user_data = {
+            name: form.name.value, 
+            email: form.email.value,
+            password: form.password.value,
+            username: form.username.value,
+            mobile: form.username.value,
+            description: form.description.value,
+            
+        };
+        user_data = JSON.stringify(user_data)
+
+        fetch("https://masai-api-mocker.herokuapp.com/auth/register",{
+            method: 'POST',
+            body: user_data,
+            headers:{
+                'Content-Type':"application/json",
+            },
+        })
+        .then((res)=>{
+            return res.json();
+        })
+        .then((res)=>{
+            console.log(res);
+        })
+        .catch((err)=>{
+            console.log(err)
+        });
+    }
+    function Login(e){
+        e.preventDefault();
+        let form = document.getElementById("login-form");
+        let user_data = {
+            username: form.user.value,
+            password : form.pass.value
+        };
+        let data_to_send = JSON.stringify(user_data);
+
+        fetch("https://masai-api-mocker.herokuapp.com/auth/login",{
+            method:'POST',
+            body: data_to_send,
+            headers:{
+                "Content-TYpe": "application/json",
+            },
+        })
+        .then((res)=>{
+            return res.json();
+        })
+        .then((res)=>{
+            console.log(res);
+            fetchmyData(user_data.username,res.token);
+        })
+        .catch((err)=>{
+            console.log(err)
+        });
+    }
+
+    function fetchmyData(username,token){
+        fetch(`https://masai-api-mocker.herokuapp.com/user/${username}`,{
+            headers:{
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+        })
+        .then((res)=>{
+            return res.json();
+        })
+        .then((res)=>{
+           var r =  res.username;
+           var m = document.getElementById("btn");
+           m.innerText = r;
+
+        })
+        .catch((err)=>{
+            console.log(err)
+        });
+    }
+</script>
+</html>
