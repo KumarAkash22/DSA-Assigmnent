@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #navbar{
+        display: flex;
+        justify-content:space-between;
+        padding-left: 4%;
+        padding-right: 2%;
+        margin: 20px;
+    }
+    #dataImg{
+        display: grid;
+        grid-template-columns: repeat(4,23%);
+        gap: 2%;
+    }
+    img{
+        width: 100%;
+        height: 400px;
+    }
+    </style>
+<body>
+    <div id="navbar">
+        <h3>Home</h3>
+        <h3>Login</h3>
+        <h3>Signup</h3>
+        <h3>Menu</h3>
+    </div>
+    <div id="dataImg"></div>
+</body>
+<script>
+    var div = document.getElementById("dataImg");
+    async function showData(){
+        let res = await fetch ("https://www.themealdb.com/api/json/v1/1/search.php?s&apikey=1");
+        let data = await res.json();
+        appendData(data);
+        console.log(data);
+    }
+
+    showData()
+
+    function appendData(data){
+        var meals = data.meals;
+        meals.forEach(ele =>{
+            ele.idMeal;
+            var ne = document.createElement("div");
+            var img = document.createElement("img");
+            img.src = ele.strMealThumb;
+            var name = document.createElement("h3");
+            name.textContent = ele.strMeal;
+            var btn = document.createElement("button");
+            btn.innerHTML = "Add To Cart"
+            var inst = document.createElement("p")
+            inst.textContent = ele.strInstructions;
+            ne.append(img,name,btn,inst);
+            div.append(ne)
+
+        })
+    }
+</script>
+</html>
