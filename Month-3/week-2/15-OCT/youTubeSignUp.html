@@ -54,7 +54,7 @@
             
         };
         user_data = JSON.stringify(user_data)
-
+        console.log(user_data)
         fetch("https://masai-api-mocker.herokuapp.com/auth/register",{
             method: 'POST',
             body: user_data,
@@ -111,6 +111,7 @@
             return res.json();
         })
         .then((res)=>{
+            console.log(res)
            var r =  res.username;
            var m = document.getElementById("btn");
            m.innerText = r;
