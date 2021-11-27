@@ -1,0 +1,777 @@
+1.find all movies which are equal to movie_name?
+db.users.find({"movie_name":{$eq:"Gold"}}).pretty();
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd0"),
+        "id" : 20,
+        "movie_name" : "Gold",
+        "movie_genre" : "Western",
+        "production_year" : 1995,
+        "budget" : 13772
+}
+2.find all movies which are not equal to movie_name?
+db.users.find({"movie_name":{$ne:"Gold"}}).pretty();
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dbd"),
+        "id" : 1,
+        "movie_name" : "Steel Trap, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2003,
+        "budget" : 16761
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dbe"),
+        "id" : 2,
+        "movie_name" : "Tourist, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2018,
+        "budget" : 9212
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dbf"),
+        "id" : 3,
+        "movie_name" : "Dark Mirror",
+        "movie_genre" : "Thriller",
+        "production_year" : 2004,
+        "budget" : 9928
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc0"),
+        "id" : 4,
+        "movie_name" : "Swept Away (Travolti da un insolito destino nell'azzurro mare d'Agosto)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2013,
+        "budget" : 11728
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc1"),
+        "id" : 5,
+        "movie_name" : "Smokin' Aces 2: Assassins' Ball",
+        "movie_genre" : "Action",
+        "production_year" : 2015,
+        "budget" : 13362
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc2"),
+        "id" : 6,
+        "movie_name" : "Mercy",
+        "movie_genre" : "Crime|Mystery|Thriller",
+        "production_year" : 2010,
+        "budget" : 14030
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc3"),
+        "id" : 7,
+        "movie_name" : "Little Big Soldier (Da bing xiao jiang)",
+        "movie_genre" : "Action|Adventure|Comedy|Drama|War",
+        "production_year" : 2014,
+        "budget" : 14592
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc4"),
+        "id" : 8,
+        "movie_name" : "Major Dundee",
+        "movie_genre" : "Adventure|War|Western",
+        "production_year" : 1995,
+        "budget" : 19692
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc5"),
+        "id" : 9,
+        "movie_name" : "Hidden Blade, The (Kakushi ken oni no tsume)",
+        "movie_genre" : "Action|Drama|Romance",
+        "production_year" : 2013,
+        "budget" : 19577
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc6"),
+        "id" : 10,
+        "movie_name" : "Stella Dallas",
+        "movie_genre" : "Drama",
+        "production_year" : 2003,
+        "budget" : 13625
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc7"),
+        "id" : 11,
+        "movie_name" : "Jolly Boys' Last Stand, The",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 1999,
+        "budget" : 11176
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc8"),
+        "id" : 12,
+        "movie_name" : "Count Yorga, Vampire",
+        "movie_genre" : "Drama|Horror|Romance",
+        "production_year" : 2003,
+        "budget" : 12250
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc9"),
+        "id" : 13,
+        "movie_name" : "Rocket, The",
+        "movie_genre" : "Drama",
+        "production_year" : 1996,
+        "budget" : 10094
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dca"),
+        "id" : 14,
+        "movie_name" : "On the Job",
+        "movie_genre" : "Action|Drama",
+        "production_year" : 2002,
+        "budget" : 12931
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dcb"),
+        "id" : 15,
+        "movie_name" : "Secret Sunshine (Milyang)",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 1992,
+        "budget" : 17276
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dcc"),
+        "id" : 16,
+        "movie_name" : "HellBent",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 2015,
+        "budget" : 15230
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dcd"),
+        "id" : 17,
+        "movie_name" : "Accidents Happen",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2001,
+        "budget" : 18281
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dce"),
+        "id" : 18,
+        "movie_name" : "Sixteen Candles",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1990,
+        "budget" : 17278
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dcf"),
+        "id" : 19,
+        "movie_name" : "Bank Dick, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 1995,
+        "budget" : 17508
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd1"),
+        "id" : 21,
+        "movie_name" : "Lure of the Sila",
+        "movie_genre" : "Drama",
+        "production_year" : 2016,
+        "budget" : 15167
+}
+
+3.find all movies greater than and greater than equal to a budget?
+db.users.find({"budget":{$gt:19800}}).pretty();   //Greater than
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6df7"),
+        "id" : 59,
+        "movie_name" : "Bye Bye, Love",
+        "movie_genre" : "Comedy",
+        "production_year" : 1999,
+        "budget" : 19995
+}
+//Greater than And EqualTo
+db.users.find({"budget":{$gte:19767}}).pretty();
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6df6"),
+        "id" : 58,
+        "movie_name" : "In the Heat of the Night",
+        "movie_genre" : "Drama|Mystery",
+        "production_year" : 2001,
+        "budget" : 19767
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6df7"),
+        "id" : 59,
+        "movie_name" : "Bye Bye, Love",
+        "movie_genre" : "Comedy",
+        "production_year" : 1999,
+        "budget" : 19995
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6e12"),
+        "id" : 86,
+        "movie_name" : "Lemmy",
+        "movie_genre" : "Documentary",
+        "production_year" : 2008,
+        "budget" : 19780
+}
+4.find all movies less than and less than equal to a budget?
+ db.users.find({"budget":{$lt:10000}}).pretty(); //Less than
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dbe"),
+        "id" : 2,
+        "movie_name" : "Tourist, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2018,
+        "budget" : 9212
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dbf"),
+        "id" : 3,
+        "movie_name" : "Dark Mirror",
+        "movie_genre" : "Thriller",
+        "production_year" : 2004,
+        "budget" : 9928
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd7"),
+        "id" : 27,
+        "movie_name" : "Candyman 3: Day of the Dead",
+        "movie_genre" : "Horror",
+        "production_year" : 1998,
+        "budget" : 9798
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dde"),
+        "id" : 34,
+        "movie_name" : "Woodsman and the Rain (Kitsutsuki to ame)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2000,
+        "budget" : 9999
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dec"),
+        "id" : 48,
+        "movie_name" : "No Regrets for Our Youth (Waga seishun ni kuinashi)",
+        "movie_genre" : "Drama",
+        "production_year" : 2003,
+        "budget" : 9836
+}
+//Less Than And Equalto
+ db.users.find({"budget":{$lte:9798}}).pretty();
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dbe"),
+        "id" : 2,
+        "movie_name" : "Tourist, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2018,
+        "budget" : 9212
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd7"),
+        "id" : 27,
+        "movie_name" : "Candyman 3: Day of the Dead",
+        "movie_genre" : "Horror",
+        "production_year" : 1998,
+        "budget" : 9798
+}
+5.find all movies that are produced after 2015 with budget greater than 15000?
+db.users.find({$and: [{production_year:{$gt:2015}},{budget:{$gt:18000}}]}).pretty();
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd3"),
+        "id" : 23,
+        "movie_name" : "Pot O' Gold",
+        "movie_genre" : "Comedy|Musical",
+        "production_year" : 2020,
+        "budget" : 18168
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6e16"),
+        "id" : 90,
+        "movie_name" : "These Amazing Shadows",
+        "movie_genre" : "Documentary",
+        "production_year" : 2020,
+        "budget" : 19566
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6e1b"),
+        "id" : 95,
+        "movie_name" : "Cemetery Club, The",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 2017,
+        "budget" : 18445
+}
+
+
+6.Find all movies that are produced after 2000 or budget greater than 10000?
+ db.users.find({$or: [{production_year:{$gt:2010}},{budget:{$gt:15000}}]}).pretty();
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dbd"),
+        "id" : 1,
+        "movie_name" : "Steel Trap, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2003,
+        "budget" : 16761
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dbe"),
+        "id" : 2,
+        "movie_name" : "Tourist, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2018,
+        "budget" : 9212
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc0"),
+        "id" : 4,
+        "movie_name" : "Swept Away (Travolti da un insolito destino nell'azzurro mare d'Agosto)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2013,
+        "budget" : 11728
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc1"),
+        "id" : 5,
+        "movie_name" : "Smokin' Aces 2: Assassins' Ball",
+        "movie_genre" : "Action",
+        "production_year" : 2015,
+        "budget" : 13362
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc3"),
+        "id" : 7,
+        "movie_name" : "Little Big Soldier (Da bing xiao jiang)",
+        "movie_genre" : "Action|Adventure|Comedy|Drama|War",
+        "production_year" : 2014,
+        "budget" : 14592
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc4"),
+        "id" : 8,
+        "movie_name" : "Major Dundee",
+        "movie_genre" : "Adventure|War|Western",
+        "production_year" : 1995,
+        "budget" : 19692
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc5"),
+        "id" : 9,
+        "movie_name" : "Hidden Blade, The (Kakushi ken oni no tsume)",
+        "movie_genre" : "Action|Drama|Romance",
+        "production_year" : 2013,
+        "budget" : 19577
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dcb"),
+        "id" : 15,
+        "movie_name" : "Secret Sunshine (Milyang)",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 1992,
+        "budget" : 17276
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dcc"),
+        "id" : 16,
+        "movie_name" : "HellBent",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 2015,
+        "budget" : 15230
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dcd"),
+        "id" : 17,
+        "movie_name" : "Accidents Happen",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2001,
+        "budget" : 18281
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dce"),
+        "id" : 18,
+        "movie_name" : "Sixteen Candles",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1990,
+        "budget" : 17278
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dcf"),
+        "id" : 19,
+        "movie_name" : "Bank Dick, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 1995,
+        "budget" : 17508
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd1"),
+        "id" : 21,
+        "movie_name" : "Lure of the Sila",
+        "movie_genre" : "Drama",
+        "production_year" : 2016,
+        "budget" : 15167
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd2"),
+        "id" : 22,
+        "movie_name" : "Strong Man, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 2006,
+        "budget" : 18496
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd3"),
+        "id" : 23,
+        "movie_name" : "Pot O' Gold",
+        "movie_genre" : "Comedy|Musical",
+        "production_year" : 2020,
+        "budget" : 18168
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd4"),
+        "id" : 24,
+        "movie_name" : "American Pie Presents The Naked Mile (American Pie 5: The Naked Mile)",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1996,
+        "budget" : 15059
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd5"),
+        "id" : 25,
+        "movie_name" : "Thirst (Bakjwi)",
+        "movie_genre" : "Drama|Horror",
+        "production_year" : 2017,
+        "budget" : 14238
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd6"),
+        "id" : 26,
+        "movie_name" : "Raffles",
+        "movie_genre" : "Adventure|Crime|Drama|Romance|Thriller",
+        "production_year" : 2004,
+        "budget" : 17038
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd8"),
+        "id" : 28,
+        "movie_name" : "Our Blushing Brides",
+        "movie_genre" : "Drama",
+        "production_year" : 1995,
+        "budget" : 19192
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd9"),
+        "id" : 29,
+        "movie_name" : "Element of Crime, The (Forbrydelsens Element)",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2007,
+
+        "budget" : 17745
+}
+
+7.find all movies that are neither produced after 2000 nor with budget greater than 10000.??
+ db.users.find({$nor: [{production_year:{$gt:2000}},{budget:{$gt:10000}}]}).pretty();
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd7"),
+        "id" : 27,
+        "movie_name" : "Candyman 3: Day of the Dead",
+        "movie_genre" : "Horror",
+        "production_year" : 1998,
+        "budget" : 9798
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dde"),
+        "id" : 34,
+        "movie_name" : "Woodsman and the Rain (Kitsutsuki to ame)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2000,
+        "budget" : 9999
+}
+8.find all movies that are not produced in 2000 or they do not have budget of 10000?
+ db.users.find({$or: [{production_year:{$ne:2000}},{budget:{$ne:10000}}]}).pretty();
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dbd"),
+        "id" : 1,
+        "movie_name" : "Steel Trap, The",
+        "movie_genre" : "Crime|Drama",
+        "production_year" : 2003,
+        "budget" : 16761
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dbe"),
+        "id" : 2,
+        "movie_name" : "Tourist, The",
+        "movie_genre" : "Drama|Thriller",
+        "production_year" : 2018,
+        "budget" : 9212
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dbf"),
+        "id" : 3,
+        "movie_name" : "Dark Mirror",
+        "movie_genre" : "Thriller",
+        "production_year" : 2004,
+        "budget" : 9928
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc0"),
+        "id" : 4,
+        "movie_name" : "Swept Away (Travolti da un insolito destino nell'azzurro mare d'Agosto)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2013,
+        "budget" : 11728
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc1"),
+        "id" : 5,
+        "movie_name" : "Smokin' Aces 2: Assassins' Ball",
+        "movie_genre" : "Action",
+        "production_year" : 2015,
+        "budget" : 13362
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc2"),
+        "id" : 6,
+        "movie_name" : "Mercy",
+        "movie_genre" : "Crime|Mystery|Thriller",
+        "production_year" : 2010,
+        "budget" : 14030
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc3"),
+        "id" : 7,
+        "movie_name" : "Little Big Soldier (Da bing xiao jiang)",
+        "movie_genre" : "Action|Adventure|Comedy|Drama|War",
+        "production_year" : 2014,
+        "budget" : 14592
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc4"),
+        "id" : 8,
+        "movie_name" : "Major Dundee",
+        "movie_genre" : "Adventure|War|Western",
+        "production_year" : 1995,
+        "budget" : 19692
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc5"),
+        "id" : 9,
+        "movie_name" : "Hidden Blade, The (Kakushi ken oni no tsume)",
+        "movie_genre" : "Action|Drama|Romance",
+        "production_year" : 2013,
+        "budget" : 19577
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc6"),
+        "id" : 10,
+        "movie_name" : "Stella Dallas",
+        "movie_genre" : "Drama",
+        "production_year" : 2003,
+        "budget" : 13625
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc7"),
+        "id" : 11,
+        "movie_name" : "Jolly Boys' Last Stand, The",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 1999,
+        "budget" : 11176
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc8"),
+        "id" : 12,
+        "movie_name" : "Count Yorga, Vampire",
+        "movie_genre" : "Drama|Horror|Romance",
+        "production_year" : 2003,
+        "budget" : 12250
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc9"),
+        "id" : 13,
+        "movie_name" : "Rocket, The",
+        "movie_genre" : "Drama",
+        "production_year" : 1996,
+        "budget" : 10094
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dca"),
+        "id" : 14,
+        "movie_name" : "On the Job",
+        "movie_genre" : "Action|Drama",
+        "production_year" : 2002,
+        "budget" : 12931
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dcb"),
+        "id" : 15,
+        "movie_name" : "Secret Sunshine (Milyang)",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 1992,
+        "budget" : 17276
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dcc"),
+        "id" : 16,
+        "movie_name" : "HellBent",
+        "movie_genre" : "Horror|Thriller",
+        "production_year" : 2015,
+        "budget" : 15230
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dcd"),
+        "id" : 17,
+        "movie_name" : "Accidents Happen",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2001,
+        "budget" : 18281
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dce"),
+        "id" : 18,
+        "movie_name" : "Sixteen Candles",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 1990,
+        "budget" : 17278
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dcf"),
+        "id" : 19,
+        "movie_name" : "Bank Dick, The",
+        "movie_genre" : "Comedy",
+        "production_year" : 1995,
+        "budget" : 17508
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd0"),
+        "id" : 20,
+        "movie_name" : "Gold",
+        "movie_genre" : "Western",
+        "production_year" : 1995,
+        "budget" : 13772
+}
+9.find all movies that were produced from 2000 to 2010.?
+ db.users.find({production_year:{$in:[2000, 2010]}}).pretty()
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc2"),
+        "id" : 6,
+        "movie_name" : "Mercy",
+        "movie_genre" : "Crime|Mystery|Thriller",
+        "production_year" : 2010,
+        "budget" : 14030
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dda"),
+        "id" : 30,
+        "movie_name" : "Inconvenient Truth, An",
+        "movie_genre" : "Documentary",
+        "production_year" : 2010,
+        "budget" : 19457
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dde"),
+        "id" : 34,
+        "movie_name" : "Woodsman and the Rain (Kitsutsuki to ame)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2000,
+        "budget" : 9999
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6de6"),
+        "id" : 42,
+        "movie_name" : "Love's Labour's Lost",
+        "movie_genre" : "Comedy|Romance",
+        "production_year" : 2010,
+        "budget" : 14442
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dfa"),
+        "id" : 62,
+        "movie_name" : "Ugly, Dirty and Bad (Brutti sporchi e cattivi)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2000,
+        "budget" : 11435
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6e01"),
+        "id" : 69,
+        "movie_name" : "Logan's Run",
+        "movie_genre" : "Action|Adventure|Sci-Fi",
+        "production_year" : 2000,
+        "budget" : 11593
+}
+
+10.Sort all movies descending based on the production year and if the year is same then alphabetically for their movie_names?
+db.users.find({production_year:{$in:[2000, 2020]}}).sort({production_year:-1 , movie_name: 1}).pretty()
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dd3"),
+        "id" : 23,
+        "movie_name" : "Pot O' Gold",
+        "movie_genre" : "Comedy|Musical",
+        "production_year" : 2020,
+        "budget" : 18168
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6e16"),
+        "id" : 90,
+        "movie_name" : "These Amazing Shadows",
+        "movie_genre" : "Documentary",
+        "production_year" : 2020,
+        "budget" : 19566
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6e01"),
+        "id" : 69,
+        "movie_name" : "Logan's Run",
+        "movie_genre" : "Action|Adventure|Sci-Fi",
+        "production_year" : 2000,
+        "budget" : 11593
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dfa"),
+        "id" : 62,
+        "movie_name" : "Ugly, Dirty and Bad (Brutti sporchi e cattivi)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2000,
+        "budget" : 11435
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dde"),
+        "id" : 34,
+        "movie_name" : "Woodsman and the Rain (Kitsutsuki to ame)",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 2000,
+        "budget" : 9999
+}
+
+11.in query 10 skip the first 10 entries and fetch the next 5?
+ db.users.find().skip(10).limit(5).pretty()
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc7"),
+        "id" : 11,
+        "movie_name" : "Jolly Boys' Last Stand, The",
+        "movie_genre" : "Comedy|Drama",
+        "production_year" : 1999,
+        "budget" : 11176
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc8"),
+        "id" : 12,
+        "movie_name" : "Count Yorga, Vampire",
+        "movie_genre" : "Drama|Horror|Romance",
+        "production_year" : 2003,
+        "budget" : 12250
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dc9"),
+        "id" : 13,
+        "movie_name" : "Rocket, The",
+        "movie_genre" : "Drama",
+        "production_year" : 1996,
+        "budget" : 10094
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dca"),
+        "id" : 14,
+        "movie_name" : "On the Job",
+        "movie_genre" : "Action|Drama",
+        "production_year" : 2002,
+        "budget" : 12931
+}
+{
+        "_id" : ObjectId("619d2cbdf5b79785529c6dcb"),
+        "id" : 15,
+        "movie_name" : "Secret Sunshine (Milyang)",
+        "movie_genre" : "Comedy|Drama|Romance",
+        "production_year" : 1992,
+        "budget" : 17276
+}
