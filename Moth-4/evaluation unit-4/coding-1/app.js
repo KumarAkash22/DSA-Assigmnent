@@ -21,10 +21,26 @@ const companySchema = new mongoose.Schema(
     }
 );
 const Company = mongoose.model("company", companySchema);
+
+
+const workHomeSchema = new mongoose.Schema(
+    {
+       company_name : {type:String,required:true},
+        company_homeWork: {type:String, required:true},
+    },
+    {
+        timestamps:true,
+        versionKey:false
+    }
+);
+const Workhome =mongoose.model("workhome",workHomeSchema);
+
 const app = express();
 app.use(express.json());
 
-app.post("/companys",async(req,res) => {
+
+
+app.post("/companies",async(req,res) => {
     try{
         const company = await Company.create(req.body);
         return res.status(201).send(company);
@@ -32,7 +48,7 @@ app.post("/companys",async(req,res) => {
         return res.status(500).json({Message: e.message,status:"Failed"});
     }
 });
-app.get("/companys",async (req,res) => {
+app.get("/companies",async (req,res) => {
     try {
         const company = await Company.find().lean().exec();
         return res.send({company});
@@ -40,6 +56,8 @@ app.get("/companys",async (req,res) => {
         return res.status(500).json({message: e.message,status:"Failed"});
     }
 })
+
+
 app.listen(2345,async function(){
     await connect();
     console.log("listening on port 2345")
