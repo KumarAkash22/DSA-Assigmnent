@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const connect = () => {
     return mongoose.connect("mongodb://127.0.0.1:27017/naukri");
 }
+const app = express();
+app.use(express.json());
 
 const companySchema = new mongoose.Schema(
     {
@@ -17,10 +19,10 @@ const companySchema = new mongoose.Schema(
     },
     {
         versionKey:false,
-        timestamps: true
+        timestamps: false
     }
 );
-const Company = mongoose.model("company", companySchema);
+const Company = mongoose.model("newcompany", companySchema);
 
 
 const workHomeSchema = new mongoose.Schema(
@@ -35,12 +37,11 @@ const workHomeSchema = new mongoose.Schema(
 );
 const Workhome =mongoose.model("workhome",workHomeSchema);
 
-const app = express();
-app.use(express.json());
 
 
 
-app.post("/companies",async(req,res) => {
+
+app.post("/comp",async(req,res) => {
     try{
         const company = await Company.create(req.body);
         return res.status(201).send(company);
@@ -48,7 +49,7 @@ app.post("/companies",async(req,res) => {
         return res.status(500).json({Message: e.message,status:"Failed"});
     }
 });
-app.get("/companies",async (req,res) => {
+app.get("/comp",async (req,res) => {
     try {
         const company = await Company.find().lean().exec();
         return res.send({company});
