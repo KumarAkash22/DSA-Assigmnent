@@ -1,7 +1,5 @@
-const transporter = require("../configs/mail")
-
+const transporter = require("../configs/mail");
 module.exports = (from, to, subject,text,html) => {
-
     const message = {
         from,
         to,
@@ -9,6 +7,5 @@ module.exports = (from, to, subject,text,html) => {
         text,
         html,
       };
-    
       transporter.sendMail(message);
 }
