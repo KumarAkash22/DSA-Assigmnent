@@ -1,0 +1,11 @@
+schema{  
+
+{key:value};
+}
+model=>(collection,schema)
+
+crud api
+app.post("/users", async (req, res) => {
+
+
+    
