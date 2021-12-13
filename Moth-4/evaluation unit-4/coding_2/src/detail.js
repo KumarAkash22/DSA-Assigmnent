@@ -1,8 +1,8 @@
 const express = require("express");
 const connect  = require("./configs/db");
 
-const authController = require("./controllers/auth.controller")
-// const emailController =require("./controllers/email.controller") 
+const {register,login} = require("./controllers/auth.controller")
+const emailController =require("./controllers/email.controller") 
 const movieController =require("./controllers/movie.controller") 
 const seatController = require("./controllers/seat.controller")
 const showController = require("./controllers/show.controller")
@@ -15,8 +15,9 @@ app.use("/seats",showController);
 app.use("/shows",showController);
 app.use("/movies",movieController);
 app.use("/seat",seatController);
-app.use("/register",authController);
-app.use("/login",authController)
+app.use("/register",register);
+app.use("/login",login)
+app.use("/users",emailController);
 
 
 

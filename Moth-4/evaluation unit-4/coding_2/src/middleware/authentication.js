@@ -26,16 +26,16 @@ module.exports = async(req, res, next)=>{
     try {
         user = await verifyToken(token);
     }catch(e){
-
-    }return res.status(400).json({
-        status:"failed",
-        message:"Please provide a valid token"
-    });
-}
+        return res.status(400).json({
+            status:"failed",
+            message:"Please provide a valid token"
+        });
+    }
 if(!user)
 return res.status(400).json({
     status:"failed",
     message:"Please provide a valid token"
 });
 res.user = user;
-return next()
+return next();
+}
