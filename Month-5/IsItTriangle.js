@@ -1,31 +1,39 @@
+function tri(arr){
+    var sum = 0;
+    for(var i = 0; i < arr.length; i++){
+        sum = arr[0] +arr[1];
+        
+    }
+    // console.log(sum)
+    if( sum > arr[2]){
+        console.log("Yes");
+    }else{
+        console.log("No");
+    }
+   
+}
 function runProgram(input) {
     // Write code here
     var input = input.split("\n");
     var testcases = +input[0];
     var line = 1;
     for(var i = 0; i < testcases; i++){
-        var str1 = input[line++].trim();
-        var str2 = input[line++].trim();
-        var dp = Array(str1.length).fill().map(() => Array(str2.length).fill());
-        for( i = 0; i < str1.length; i++ ){
-           dp[i][0] = i;
-        }
-        // when s2 is empty
-        for( i = 0; i < str2.length; i++ ){
-           dp[0][i] = i;
-        }
-
-        console.log(dp)
+        var arr1 = input[line++].trim().split(" ").map(Number);
+        var arr = arr1.sort((a,b)=>{
+            return a-b;
+        })
+        tri(arr);
+        // console.log(arr);
     }
+   
   }
   if (process.env.USERNAME === "admin") {
-    runProgram(`3
-    abcde
-    abde
-    abde
-    abcde
-    abcde
-    abxde
+    runProgram(`5
+    4 5 13
+    7 1 8
+    2 5 4
+    2 2 2
+    85 37 18
     `);
   } else {
     process.stdin.resume();
