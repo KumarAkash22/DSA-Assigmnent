@@ -27,8 +27,8 @@ function runProgram(input) {
   if (process.env.USERNAME === "admin") {
     runProgram(`2
     3
-    12 3 4
-    5 4 1
+    0 0 8
+    0 0 7
     2
     1 5
     1 4`);
