@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite Scrolling</title>
+    <style>
+        .main{
+            display: grid;
+            grid-template-columns: repeat(5, 20%);
+            grid-gap: 1%;
+            margin: 3%;
+            
+
+        }
+    </style>
+</head>
+<body>
+    <div  class="main"></div>
+
+</body>
+</html>
+<script>
+    const main = document.querySelector('.main');
+
+function Rand_Value() {
+    let random = Math.random() * 100
+    console.log(random)
+    return random
+}
+
+
+const loadImge = () => {
+  
+     
+    let i=1
+     
+    while (i <= 25) {
+        let div = document.createElement('div')
+        let img = document.createElement("img");
+        let p = document.createElement("p");
+        img.src = `https://source.unsplash.com/random/200x200?sig=${Rand_Value()}`;
+        p.innerHTML = i
+        p.style.color = "blue";
+        p.style.marginLeft = "30%"
+        img.style.display = "block"
+        div.append(img,p);
+        main.append(div);
+        i++
+    }
+}
+
+
+loadImge()
+
+function InfiniteScroll() {
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight) {
+        loadImge()
+    }
+}
+
+window.addEventListener('scroll',InfiniteScroll)
+</script>
