@@ -1,0 +1,101 @@
+[
+    {
+        "name":"Patna",
+        "state":"Bihar",
+        "distict":"Patna",
+        "population":170,
+        "polling_number":3,
+        "placeType":"City"
+    },
+
+    {
+        "name":"Panji",
+        "state":"Goa",
+        "distict":"Panji",
+        "population":120,
+        "polling_number":3,
+        "placeType":"City"
+    },
+    {
+        "name":"Nodia",
+        "state":"Uttar Pradesh",
+        "distict":"Nodia",
+        "population":130,
+        "polling_number":1,
+        "placeType":"City"
+    },
+    {
+        "name":"Delhi",
+        "state":"Delhi",
+        "distict":"Delhi",
+        "population":420,
+        "polling_number":3,
+        "placeType":"Metro City"
+    },
+    {
+        "name":"Mumbai",
+        "state":"Mahrastra",
+        "distict":"Mumbai",
+        "population":370,
+        "polling_number":2,
+        "placeType":"Metro City"
+    },
+    {
+        "name":"Kanpur",
+        "state":"Uttar Pradesh",
+        "distict":"Kanpur",
+        "population":240,
+        "polling_number":2,
+        "placeType":"City"
+    },
+
+    {
+        "name":"Lucknow",
+        "state":"Utter Pradesh",
+        "distict":"Lucknow",
+        "population":250,
+        "polling_number":2,
+        "placeType":"City"
+    },
+    {
+        "name":"Sitapur",
+        "state":"Utter Prasesh",
+        "distict":"Sitapur",
+        "population":54,
+        "polling_number":2,
+        "placeType":"Village"
+    },
+    {
+        "name":"Wasepur",
+        "state":"Jharkhand",
+        "distict":"Dhanbad",
+        "population":23,
+        "polling_number":2,
+        "placeType":"Village"
+    },
+    {
+        "name":"Balia",
+        "state":"Uttar Pradesh",
+        "distict":"Balia",
+        "population":78,
+        "polling_number":1,
+        "placeType":"village"
+    },
+    {
+        "name":"Banglore",
+        "state":"Karnatak",
+        "distict":"Banglore",
+        "population":864,
+        "polling_number":3,
+        "placeType":"Metro City"
+    },
+    {
+        "name":"Mirjapur",
+        "state":"Uttar Pradesh",
+        "distict":"Mirjapur",
+        "population":47,
+        "polling_number":2,
+        "placeType":"village"
+    }
+
+]
